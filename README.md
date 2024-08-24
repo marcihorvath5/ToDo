@@ -66,7 +66,7 @@ A NetAcademia "Az első webes C# projektem: TO-DO alkalmazás készítése" tanf
 
 
 ## Az első webes alkalmazásunk létrehozása
-Mivel a környezet és a fejlesztési munkafolyamat az ilyen típusú fejlesztéseknél összetett, így nem kézzel hozzuk létre, hanem a Visula Studio template-jének a segítségével.
+Mivel a környezet és a fejlesztési munkafolyamat az ilyen típusú fejlesztéseknél összetett, így nem kézzel hozzuk létre, hanem a Visual Studio template-jének a segítségével.
 
 A varázslóval létrehozzuk az ASP.NET MVC Webalkalmazást (.NET framework), az alábbi módon:
 
