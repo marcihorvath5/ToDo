@@ -26,5 +26,23 @@ namespace ToDoApp.Controllers
 
             return View();
         }
+
+        public ActionResult ToDoList()
+        {
+            // bevásárló lista
+            var lista = new List<string>();
+
+            lista.Add("Só");
+            lista.Add("Cukor");
+            lista.Add("Spagetti");
+            lista.Add("Marhahús");
+            lista.Add("Paradicsom");
+
+            //a ViewBag-be tett adatokat a nézeten ki tudjuk olvasni
+            //Figyelem az erősen típusosságot elveszítjük
+            //ViewBag.Lista = list;
+
+            return View(lista);
+        }
     }
 }

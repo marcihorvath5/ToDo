@@ -1,0 +1,23 @@
+﻿@model List<string>
+
+@*Kiegészítettük a View definícióját, hogy képes legyen List<string> típúsú adatot fogadni
+    Mintha view egy függvény lenne és azt mondanánk hogy:
+    view(List<string>)*@
+
+@{
+    ViewBag.Title = "ToDoList";
+}
+
+<h2>Bevásárlólista</h2>
+
+
+@*Kiolvasom a ViewBag-be tárolt információt itt a nézeten*@
+@*A megoldás hogy egy ciklussal kiolvassuk a listából az adatokat és úgy írjuk a HTML-t*@
+
+<ol>
+    @foreach (var elem in Model)
+    {
+        <li>@elem</li>
+
+    }
+</ol>

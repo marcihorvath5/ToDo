@@ -207,7 +207,7 @@ Két fontos Routing szabály van:
     - ha a Controller sincs megadva, akkor az a **Home/Index**
 
 #### A Nézet (View)
-Nézkonvenció alapján:
+Névkonvenció alapján:
 
 - MVC: Model-View-Controller
   - View
