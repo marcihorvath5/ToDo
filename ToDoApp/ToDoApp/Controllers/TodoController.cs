@@ -9,21 +9,33 @@ namespace ToDoApp.Controllers
 {
     public class TodoController: Controller
     {
+       
         public ActionResult Index()
-        {
-            // bevásárló lista
-            var lista = new List<TodoItem>();
-
-            lista.Add(new TodoItem() { Name = "Só", Done = true });
-            lista.Add(new TodoItem() { Name = "Cukor", Done = true });
-            lista.Add(new TodoItem() { Name = "Spagetti", Done = true });
-            lista.Add(new TodoItem() { Name = "Marhahús", Done = false });
-            lista.Add(new TodoItem() { Name = "Paradicsom", Done = false });
+        {                       
             //a ViewBag-be tett adatokat a nézeten ki tudjuk olvasni
             //Figyelem az erősen típusosságot elveszítjük
             //ViewBag.Lista = list;
 
-            return View(lista);
+            return View(MyDb.Lista);
+        }
+        
+        [HttpGet] // ezzel csak a get kéréssel fogja a routing ide írányítani
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost] // innentől csak a poszt kéréseket fogja ez a create kiszolgálni
+        public ActionResult Create(string Name)
+        {
+            if (!string.IsNullOrEmpty(Name))
+            {
+                MyDb.Lista.Add(new TodoItem() { Name = Name, Done = true });
+                return RedirectToAction("Index");
+            }
+
+            //Mivel az adat nem valid itt kéne egy hibaüzenet
+            return View();
         }
     }
 }

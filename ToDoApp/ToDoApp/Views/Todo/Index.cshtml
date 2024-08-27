@@ -15,15 +15,20 @@
 @*A megoldás hogy egy ciklussal kiolvassuk a listából az adatokat és úgy írjuk a HTML-t*@
 
 <ol>
-    @foreach (var todoItem in Model)
-    {
-        if (todoItem.Done)
+        @foreach (var todoItem in Model)
         {
-            <li><strike>@todoItem.Name</strike></li>
+            if (todoItem.Done)
+            {
+                <li><strike>@todoItem.Name</strike></li>
+            }
+            else
+            {
+                <li>@todoItem.Name</li>
+            }
         }
-        else
-        {
-            <li>@todoItem.Name</li>
-        }
-    }
-</ol>
+    </ol>
+@*Mindkét megoldás ugyanarra a "Create" actionre visz
+    a Controllert nem kell megadni tudja melyiket keressük*@
+<a href="/Todo/Create">Új elem felvétele</a>
+<br/>
+@Html.ActionLink("Új elem felvétele", "Create")
