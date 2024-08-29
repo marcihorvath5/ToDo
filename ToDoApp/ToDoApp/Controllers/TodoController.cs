@@ -30,7 +30,11 @@ namespace ToDoApp.Controllers
         {
             if (!string.IsNullOrEmpty(name))
             {
-                MyDb.Lista.Add(new TodoItem() { Name = name, Done = isDone });
+                // Count nem jó most mert ha törlök egyet akkor 2 ugyanolyan elemem lenne
+                // var maxId = MyDb.Lista.Count;
+                var maxId = MyDb.Lista.Max(x => x.Id);
+
+                MyDb.Lista.Add(new TodoItem() { Id = maxId + 1, Name = name, Done = isDone });
                 return RedirectToAction("Index");
             }
 
@@ -70,5 +74,20 @@ namespace ToDoApp.Controllers
             item.Done = done;
             return RedirectToAction("index");
         }
+
+        [HttpGet]
+        public ActionResult Delete(int id) 
+        {
+            var item = MyDb.Lista.Single(x => x.Id == id);
+            return View(item);
+        }
+        [HttpPost]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            var item = MyDb.Lista.Single(x => x.Id == id);
+            MyDb.Lista.Remove(item);
+            return RedirectToAction("Index");
+        }
+
     }
 }
