@@ -57,14 +57,18 @@ namespace ToDoApp.Controllers
             // ha nincs ilyen elem akkor 0-al tér vissza
             // var item = MyDb.Lista.SingleOrDefault(x => x.Id == id);
 
-            return View();
+            // ezt az elemet kell módosítanunk
+
+            return View(item);
         }
 
-        [HttpPut]
-        public ActionResult Edit(string name, bool isDone)
+        [HttpPost] 
+        public ActionResult Edit(int id, string name, bool done)
         {
-
-            return View();
+            var item = MyDb.Lista.Single(x => x.Id == id);
+            item.Name = name;
+            item.Done = done;
+            return RedirectToAction("index");
         }
     }
 }
