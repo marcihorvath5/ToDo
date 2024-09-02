@@ -17,10 +17,11 @@
         @Html.EditorFor(x => x.Done)
         @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
 
-        Html.HiddenFor(model => model.Id)
+    Html.HiddenFor(model => model.Id);
 
         <input type="submit" value="Mentés"/>
-   
+
+
 }
 
 @Html.ActionLink("Back to List", "Index")
