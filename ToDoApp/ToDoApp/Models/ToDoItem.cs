@@ -9,8 +9,9 @@ namespace ToDoApp.Models
     public class TodoItem
     {
         [Key]
-        public int Id { get; internal set; }
+        public int Id { get; set; }
+        [Required]
         public string Name { get; set; }
-        public bool Done { get; internal set; }
+        public bool Done { get; set; }
     }
 }
