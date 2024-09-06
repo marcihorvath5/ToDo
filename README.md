@@ -349,7 +349,7 @@ A Controller áttekintő nézetét szolgáltató kérés az Index, innen is kapt
      Ugyanaz a függvénynév különböző szignatúrával különböző függvénynek számít, így létrehozható.
     Ez egy C# alaptulajdonság (function overloading).
 
-  - [ ] indexre beviteli mező tétele és a bevitel programozása
+  - [X] indexre beviteli mező tétele és a bevitel programozása
  
 ### Házi feladat
 - saját beviteli oldal próbálgatása
@@ -357,7 +357,7 @@ A Controller áttekintő nézetét szolgáltató kérés az Index, innen is kapt
 
 
 ### Feladatok
-- [ ] Saját módosítás (Edit) űrlap készítése
+- [X] Saját módosítás (Edit) űrlap készítése
   - [X] nézet készítése
   - [X] GET action készítése
         Mivel létező adatot módosítunk, így azonosítanunk kell a megfelelő tételt, így:
