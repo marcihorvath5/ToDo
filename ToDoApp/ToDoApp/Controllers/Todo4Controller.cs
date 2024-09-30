@@ -48,7 +48,7 @@ namespace ToDoApp.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,Done")] TodoItem todoItem)
         {
-            if (ModelState.IsValid)
+                if (ModelState.IsValid)
             {
                 db.TodoItems.Add(todoItem);
                 db.SaveChanges();
